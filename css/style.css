@@ -199,6 +199,7 @@
 
 .btn.bg-grey {
     background: var(--grey);
+    color: var(--bg);
 }
 
 .btn.bg-orange {
