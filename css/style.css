@@ -1,0 +1,214 @@
+ /*====================RESET START=======================*/
+  
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+     v2.0 | 20110126
+     License: none (public domain)
+  */
+  /* html,
+  body,
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  } */
+  
+  /* HTML5 display-role reset for older browsers */
+  /* article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+  
+  ol,
+  ul {
+    list-style: none;
+  }
+  
+  blockquote,
+  q {
+    quotes: none;
+  }
+  
+  blockquote:before,
+  blockquote:after,
+  q:before,
+  q:after {
+    content: '';
+    content: none;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  } */
+  
+  /*====================RESET END=======================*/
+
+  :root{
+    --bg:#000;
+    --orange:#ff9501;
+    --grey:#a6a6a6;
+    --white:#fdfdfd;
+  }
+
+  .calc{
+    margin: 50px auto;
+    width: 300px;
+    height: 440px;
+    /* border: 1px solid var(--bg); */
+    border-radius: 20px;
+    background-color: var(--bg);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 18px;
+    box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+.calc-screen{
+    height: 85px;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.calc-screen p{
+    text-align: right;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+}
+
+.btn{
+    width: 60px;
+    height: 60px;
+    background: #333;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    user-select: none;
+
+}
+
+.btn:hover{
+    filter:brightness(120%);
+}
+
+.btn:active{
+    filter:brightness(90%);
+}
+
+.btn.bg-grey {
+    background: var(--grey);
+}
+
+.btn.bg-orange {
+    background: var(--orange);
+}
+
+.btn.zero
+{
+    display: flex;
+    justify-content: center;
+    width: 42%;
+    border-radius: 34px;
+}
