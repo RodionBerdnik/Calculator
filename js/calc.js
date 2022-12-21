@@ -3,8 +3,8 @@ let second_num = "";
 let sign = ""; //* знак операции
 let finish = false;
 
-const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ","];
-const action = ["-", "+", "x", "/"];
+const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
+const action = ["-", "+", "x", "/", '+/-', '%'];
 
 const out = document.querySelector(".calc-screen p");
 
@@ -25,10 +25,11 @@ document.querySelector(".buttons").onclick = (event) => {
   if (event.target.classList.contains("ac")) return;
 
   out.textContent = "";
+
   //* Получаю нажатую кнопку
   const key = event.target.textContent;
 
-  //* Если нажата кнопка 0-9 или ,
+  //* Если нажата кнопка 0-9 или .
   if (digit.includes(key)) {
     if (second_num === "" && sign === "") {
       first_num += key;
@@ -55,8 +56,14 @@ document.querySelector(".buttons").onclick = (event) => {
     return;
   }
 
+  // function percent() {
+  //   let per = first_num / 100 * second_num;
+  //   return per;
+  // }
+
   //* Если нажата кнопка =
   if (key === "=") {
+    if (second_num === '') second_num = first_num;
     switch (sign) {
       case "+":
         first_num = +first_num + +second_num;
@@ -68,18 +75,21 @@ document.querySelector(".buttons").onclick = (event) => {
         first_num = first_num * second_num;
         break;
       case '/':
+        if (second_num === '0') {
+          out.textContent = 'Ошибка';
+          first_num ='';
+          second_num = '';
+          sign ='';
+          return;
+        }
         first_num = first_num / second_num;
-
-        break;  
-    //   case '%':
-    //     first_num = first_num / second_num;
-    //     break;   
-    //   case '+/-':
-    //     first_num = first_num * -1;
-    //     break;
+        break;   
+      case '+/-':
+        first_num = first_num * -1;
+        break;
     }
     finish= true;
     out.textContent=first_num;
-    console.table(first_num, second_num, sign);
+    console.table(first_num, second_num, sign, perc);
   }
 };
