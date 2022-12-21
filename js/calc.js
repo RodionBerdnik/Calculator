@@ -66,13 +66,13 @@ document.querySelector(".buttons").onclick = (event) => {
     if (second_num === '') second_num = first_num;
     switch (sign) {
       case "+":
-        first_num = +first_num + +second_num;
+        first_num = (+first_num + +second_num).toFixed(8);
         break;
       case "-":
-        first_num = first_num - second_num;
+        first_num = (first_num - second_num).toFixed(8);
         break;
       case "x":
-        first_num = first_num * second_num;
+        first_num = (first_num * second_num).toFixed(8);
         break;
       case '/':
         if (second_num === '0') {
@@ -82,7 +82,7 @@ document.querySelector(".buttons").onclick = (event) => {
           sign ='';
           return;
         }
-        first_num = first_num / second_num;
+        first_num = (first_num / second_num).toFixed(8);
         break;   
       case '+/-':
         first_num = first_num * -1;
@@ -90,6 +90,6 @@ document.querySelector(".buttons").onclick = (event) => {
     }
     finish= true;
     out.textContent=first_num;
-    console.table(first_num, second_num, sign, perc);
+    console.table(first_num, second_num, sign);
   }
 };

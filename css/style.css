@@ -157,9 +157,8 @@
     height: 85px;
     padding: 10px;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    margin-right: 25px;
+    overflow-x: hidden;
 }
 
 .calc-screen p{
